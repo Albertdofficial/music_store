@@ -1,0 +1,53 @@
+﻿@page
+@using System
+@model MusicStore.Pages.Music.RecordModel
+@{
+}
+
+<h1>
+    Records of Artists and their albums
+</h1>
+
+@{
+    var MessageDescription = (string)ViewData["MessageDescription"];
+}
+
+@if (!string.IsNullOrWhiteSpace(MessageDescription))
+{
+    <div class="container">
+        <div class="alert alert-success alert-dissmissible fade show mb-5" role="alert">
+            @Html.Raw(MessageDescription)
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+
+
+@if (Model.Records != null && Model.Records.Any())
+{
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Artist Name</th>
+                    <th>Album Name</th>
+                    <th>Publishment Year</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model.Records)
+                {
+                    <tr>
+                        <td>@record.ArtistName</td>
+                        <td>@record.AlbumName</td>
+                        <td>@record.Year</td>
+                        <td><a class="btn btn-primary" href="/Music/Update/@record.Id">View</a>  </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+}

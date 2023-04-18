@@ -1,0 +1,25 @@
+﻿@page
+@model MusicStore.Pages.Music.AddRecordModel
+@{
+}
+
+<div class="container">
+    <form method="post">
+        <div class="mb-3">
+            <label for="artistname" class="form-label">Arist Name</label>
+            <input type="text" class="form-control" id="artistname" asp-for="ArtistName">
+        </div>
+        <div class="mb-3">
+            <label for="albumName" class="form-label">Album Name</label>
+            <input type="text" class="form-control" id="albumname" asp-for="AlbumName">
+        </div>
+        <div class="mb-3">
+            <label for="year" class="form-label">Publishment Year</label>
+            <input type="number" class="form-control" id="year" asp-for="Year">
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Add</button>
+        </div>
+
+    </form>
+</div>

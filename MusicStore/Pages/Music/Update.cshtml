@@ -1,0 +1,30 @@
+﻿@page "{id:Guid}"
+@model MusicStore.Pages.Music.UpdateModel
+@{
+}
+
+<div class="container">
+    <form method="post">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <input type="text" class="form-control" id="id" asp-for="Record.Id">
+        </div>
+        <div class="mb-3">
+            <label for="artistname" class="form-label">Artist Name</label>
+            <input type="text" class="form-control" id="artistname" asp-for="Record.ArtistName">
+        </div>
+        <div class="mb-3">
+            <label for="albumName" class="form-label">Album Name</label>
+            <input type="text" class="form-control" id="albumname" asp-for="Record.AlbumName">
+        </div>
+        <div class="mb-3">
+            <label for="year" class="form-label">Publishment Year</label>
+            <input type="number" class="form-control" id="year" asp-for="Record.Year">
+        </div>
+        <div class="d-flex justify-content-between" >
+            <button class="btn btn-primary" type="submit" asp-page-handler="Edit">Save</button>
+            <button class="btn btn-danger" type="submit" asp-page-handler="Delete">Delete</button>
+        </div>
+
+    </form>
+</div>
